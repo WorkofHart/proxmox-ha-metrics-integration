@@ -4,6 +4,12 @@ A local-polling custom integration for Proxmox VE 8/9 API-token authentication. 
 
 ## Install
 
+### With HACS
+
+In HACS, open its menu → **Custom repositories**, add `https://github.com/WorkofHart/proxmox-ha-metrics-integration` as an **Integration**, then select the `v0.1.1b0` release. Download it and restart Home Assistant. The earlier `v0.1.0-alpha` release lacks the manifest version and other HACS metadata; do not select it. This is an early test release, not verified against a live HA/Proxmox setup.
+
+### Manually
+
 Copy `custom_components/proxmox_metrics` into `<HA config>/custom_components/`, restart Home Assistant, then Settings → Devices & services → Add integration → Proxmox Metrics. Enter endpoint URL (prefer `https://node:8006`), API token ID (`user@realm!token-name`), secret, and TLS verification choice. Use a trusted certificate; disabling verification is only for isolated networks with a self-signed certificate.
 
 Configure additional independent endpoints as separate entries. Configure scan interval in integration options (15–900 seconds; default 60). Recorder retains numeric measurement sensors with appropriate units/state classes; availability follows coordinator and per-resource status. Proxmox counters (network bytes) are reported as measurements because API counters can reset at guest restart; do not treat them as monotonic energy/cumulative totals. Entities for newly discovered guests and metrics are added on subsequent polls. Numeric sensors use suitable units and state classes where available.
