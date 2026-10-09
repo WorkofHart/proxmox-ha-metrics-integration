@@ -1,0 +1,21 @@
+# Scratch, fetched reference material, and superseded draft: not part of integration
+/original-draft/
+/proxmox-api-reference.js
+
+# Python and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.db
+*.sqlite*
+secrets.yaml
+.storage/
+config/

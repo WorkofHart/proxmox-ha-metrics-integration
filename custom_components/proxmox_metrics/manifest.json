@@ -1,0 +1,1 @@
+{"domain":"proxmox_metrics","name":"Proxmox Metrics","codeowners":[],"config_flow":true,"documentation":"https://github.com/WorkofHart/proxmox-ha-metrics-integration","integration_type":"hub","iot_class":"local_polling","requirements":[]}
